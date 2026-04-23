@@ -25,7 +25,6 @@ public class TimetableTest {
         //Проверить, что за вторник не вернулось занятий
         List<TrainingSession> tuesDaySessions = timetable.getTrainingSessionsForDay(DayOfWeek.TUESDAY);
         Assertions.assertEquals(0, tuesDaySessions.size(), "В вторник не должно быть занятий");
-        Assertions.assertEquals(tuesDaySessions, tuesDaySessions.get(0));
     }
 
     @Test

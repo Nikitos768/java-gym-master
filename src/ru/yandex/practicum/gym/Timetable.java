@@ -43,7 +43,7 @@ public class Timetable {
 
 
     public List<TrainingSession> getTrainingSessionsForDayAndTime(DayOfWeek dayOfWeek, TimeOfDay timeOfDay) {
-        TreeMap<TimeOfDay, List<TrainingSession>> sessionsForDay = timetable.get(dayOfWeek);//как реализовать, тоже непонятно, но сложность должна быть О(1)
+        Map<TimeOfDay, List<TrainingSession>> sessionsForDay = timetable.get(dayOfWeek);//как реализовать, тоже непонятно, но сложность должна быть О(1)
 
         if (sessionsForDay == null) {
             return new ArrayList<>();
@@ -59,7 +59,7 @@ public class Timetable {
     }
 
 
-    public List<CounterOfTrainings> getCoaches() {
+    public List<CounterOfTrainings> getCoachesByCoaches() {
         Map<Coach, Integer> counts = new HashMap<>();
 
         for (TreeMap<TimeOfDay, List<TrainingSession>> daySchedule : timetable.values()) {
